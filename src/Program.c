@@ -3,7 +3,8 @@
 int main(){
     Json json = newJson();
     char *str = json->readJsonIntoString("./.kilit");
-    printf("%s", str);
+    LinkedList list = json->parseJsonIntoList(str);
     json->delete(json);
     free(str);
+    list->delete(list);
 }

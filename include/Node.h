@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 struct NODE{
+    char *code;
     char *key;
     char *value;
     struct NODE *next;

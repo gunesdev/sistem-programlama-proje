@@ -8,5 +8,8 @@ Node newNode(){
 }
 
 void DeleteNode(Node this){
+    free(this->code);
+    free(this->key);
+    free(this->value);
     free(this);
 }

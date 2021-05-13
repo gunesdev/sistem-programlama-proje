@@ -89,9 +89,23 @@ int main(int argc, char **argv)
         jettison_inputstruct(is);
 	     /*---------------------End Read .Kilit -----------------------*/   
              /*---------------------Begin Encryption -----------------------*/
-         if(strcmp(argv[1], "-e") == 0){
-            
-         }
+        if(strcmp(argv[1], "-e") == 0){
+            IS isG;
+            int iG;
+            isG = new_inputstruct(argv[2]);
+            if (isG == NULL) {
+                exit(1);
+            }
+            while(get_line(isG) >= 0) {
+                for (iG = 0; iG < isG->NF; iG++) {
+                    //printf("%s\n",isG->fields[iG]);
+                    tmp = jrb_find_str(t, isG->fields[iG]);
+                    p = (Part *) tmp->val.v;
+                    printf("%1s ",p->huffmankodu);
+                }
+            }
+            jettison_inputstruct(isG);
+        }
              /*---------------------End Encryption -----------------------*/
             /*---------------------Begin Decription -----------------------*/
          else if(strcmp(argv[1], "-d") == 0){

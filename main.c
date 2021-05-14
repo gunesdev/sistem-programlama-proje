@@ -96,12 +96,21 @@ int main(int argc, char **argv)
             if (isG == NULL) {
                 exit(1);
             }
+            FILE *zet;
+            zet = fopen(argv[3], "w"); // "w" defines "writing mode"
+            fprintf(zet,"");
+            fclose(zet);
             while(get_line(isG) >= 0) {
                 for (iG = 0; iG < isG->NF; iG++) {
                     //printf("%s\n",isG->fields[iG]);
                     tmp = jrb_find_str(t, isG->fields[iG]);
                     p = (Part *) tmp->val.v;
                     printf("%1s ",p->huffmankodu);
+                    FILE *ppf;
+                    ppf = fopen(argv[3], "a");
+                    fprintf(ppf," ");
+                    fprintf(ppf, p->huffmankodu);
+                    fclose(ppf);
                 }
             }
             jettison_inputstruct(isG);
@@ -121,6 +130,18 @@ int main(int argc, char **argv)
                     tmp = jrb_find_str(t, isc->fields[ic]);
                     p = (Part *) tmp->val.v;
                     printf("%-1s ", p->kelime);
+                    if(ic==0){
+                        FILE *fptr;
+                        fptr = fopen(argv[3], "w");
+                        fprintf(fptr, p->kelime);
+                        fclose(fptr);
+                    }else{
+                        FILE *fptra;
+                        fptra = fopen(argv[3], "a");
+                        fprintf(fptra," ");
+                        fprintf(fptra, p->kelime);
+                        fclose(fptra);
+                    }
                 }
             }
             jettison_inputstruct(isc);

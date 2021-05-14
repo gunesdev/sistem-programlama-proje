@@ -109,7 +109,21 @@ int main(int argc, char **argv)
              /*---------------------End Encryption -----------------------*/
             /*---------------------Begin Decription -----------------------*/
          else if(strcmp(argv[1], "-d") == 0){
-            
+            IS isc;
+            int ic;
+            isc = new_inputstruct(argv[2]);
+            if (isc == NULL) {
+                exit(1);
+            }
+            while(get_line(isc) >= 0) {
+                for (ic = 0; ic < isc->NF; ic++) {
+                    // printf("%d: %s\n", isc->line, isc->fields[ic]);
+                    tmp = jrb_find_str(t, isc->fields[ic]);
+                    p = (Part *) tmp->val.v;
+                    printf("%-1s ", p->kelime);
+                }
+            }
+            jettison_inputstruct(isc);
          }
             /*---------------------End Decription -----------------------*/
          else{printf("├───────────────────HATA -e ya da -d girilmeli───────────────────├\n");}

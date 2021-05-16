@@ -6,6 +6,7 @@
 |B181210098|Canan EROĞLU|B|1. Öğretim|Json Deserialization Sorumlusu|[cananEroglu312](https://github.com/cananEroglu312)|
 |U101210016|Uğur ÜNVERMİŞ|B|2. Öğretim|Encode Ve Decode Sorumlusu|[ugurunvermis](https://github.com/ugurunvermis)|
 |G181210068|Oğuzhan GÜNEŞ|C|2. Öğretim|Proje Yöneticisi|[gunesdev](https://github.com/gunesdev)|
+
 ## Öğrencilere Düşen Görevler
 - Proje Yöneticisi (Oğuzhan GÜNEŞ)
 	- GitHub’da projenin oluşturulması
@@ -21,3 +22,12 @@
 - Encode Ve Decode Sorumlusu (Uğur ÜNVERMİŞ)
 	- Encode işlemlerinin gerçekleştirilmesi
 	- Decode işlemlerinin gerçekleştirilmesi
+
+## Projeden Görüntüler:
+![Encrypt](doc/encrypt.png)<br>
+![Decrypt](doc/decrypt.png)<br>
+
+## Notlar:
+1. libfdr kütüphanesindeki header dosyaları projede libfdr klasörü içinde bulunmalıdır.
+2. libfdr kütüphanesinin obje dosyalarını içeren libfdr.a arşivi projede libfdr klasörü içinde bulunmalıdır.<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;Bu şartlar sağlanmadığında makefile dosyası yeni senaryoya uygun biçimde düzenlenmelidir. Aksi takdirde proje derlenmeyecektir.

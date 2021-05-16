@@ -1,3 +1,7 @@
 kripto
 lib/*
 !lib/.gitkeep
+libfdr/*.o
+main.o
+encripted
+decripted
